@@ -1,0 +1,9 @@
+---
+- hosts: 10.2.0.1 10.2.0.2 10.2.0.3 10.2.0.4 10.2.0.5 
+  remote_user: root
+
+  task:
+    - name: deploy promtail
+      shell: yum install promtail
+    - name: auto start promtail
+      shell: systemctl enable promtail      
